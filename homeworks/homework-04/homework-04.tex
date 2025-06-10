@@ -1,0 +1,198 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Problem Set\ \#4}
+\newcommand{\hmwkDueDate}{May 29, 2025}
+\newcommand{\hmwkClass}{ECON 219}
+\newcommand{\hmwkClassInstructor}{Dr. Sergio Urzua}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Problem 9.5
+\begin{homeworkProblem}
+  As we have seen in many places, the general Cobb-Douglas production function for two 
+  inputs is given by 
+  $$q=f(k,l)=AK^{\alpha} l^{\beta}$$
+  where $0<\alpha<1$ and $0<\beta<1$. For this production function:
+  \begin{enumerate}
+    \item Show that $f_k>0$, $f_1 > 0$, $f_{kk}<0$, $f_{ll}<0$, and $f_{kl}>0$. 
+    \item Show that $e_{q,k} = \alpha$ and $e_{q,l}=\beta$. 
+    \item In footnote 5, we defined the scale elasticity as 
+      $$e_{q,t}=\frac{\partial f(tk,tl)}{\partial t} \cdot \frac{t}{f(tk,tl)}$$
+      where the expression is to be evaluated at $t=1$. Show that, for this Cobb-Douglas function,
+      $e_{q,t} = \alpha + \beta$/ Hence in this case the elasticity and the returns to scale of the production 
+      function agree (for more on this concept see Problem 9.9).
+    \item Show that this function is quasi-concave.
+    \item Show that the function is concave for $\alpha + \beta \ge 1$ but not concave for $alpha + \beta > 1$.
+  \end{enumerate}
+\end{homeworkProblem}
+
+% Problem 9.7
+\begin{homeworkProblem}
+  Consider a generalization of the production function in Example 9.3:
+  $$q= \beta_0 + \beta_1 \sqrt{kl} + \beta_2 k + \beta_3 l$$
+  where 
+  $$0 \ge \beta_i \quad i=0,\ldots,3$$
+  \begin{enumerate}
+\item ff this function is to exhibit constant returns to scale, what restrictions should be placed on the parameters 
+  $\beta_0, \cdots, \beta_3$?
+\item Show that, in the constant returns-to-scale case, this function exhibits diminishing marginal 
+  productivities and that marginal productivity function ar homogeneous of degree 0.
+\item Calculate $\sigma$ in this case. Although $\sigma$ is not in general constant, for what values of the $\beta$'s does 
+  $\sigma=0,1,\infty$
+  \end{enumerate}
+
+\end{homeworkProblem}
+
+% Additional Application
+\begin{homeworkProblem}
+  Consider the production function $q= f(k,l) = (\sqrt{k} + \sqrt{l})^2$. The cost of labor and capital 
+  are $w$ and  $v$ respectively. Aside from the cost of labor and capital, there are no cost. 
+  \begin{enumerate}
+    \item What type of production function is this? Hint: Not Cobb-Douglas 
+    \item Use your answer from part (a) to find the elasticity of substitution. Hint: There is a simple formula for 
+      elasticity of substitution related to the functional form. 
+    \item Find RTS (l for k).
+    \item Find the total cost function. 
+    \item Use your answer from part (d) to find the average cost.
+    \item Use your answer from part (d) to find marginal cost.
+    \item Is the production function homothetic?
+    \item Does the production function exhibit increasing, constant, or decreasing return to scale?
+    \item Is the expansion path linear?
+    \item In general, what can you say about AC and MC for homothetic production functions with no fixed cost?
+  \end{enumerate}
+\end{homeworkProblem}
+
+\end{document}
