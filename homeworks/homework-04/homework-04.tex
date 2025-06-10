@@ -148,14 +148,65 @@
   where $0<\alpha<1$ and $0<\beta<1$. For this production function:
   \begin{enumerate}
     \item Show that $f_k>0$, $f_1 > 0$, $f_{kk}<0$, $f_{ll}<0$, and $f_{kl}>0$. 
+      \begin{align*}
+        f_k &= \frac{\partial f}{\partial k} = A \alpha k^{\alpha - 1} l^{\beta} > 0 \\
+        f_l &= \frac{\partial f}{\partial l} = A \beta k^{\alpha} l^{\beta - 1} > 0 \\
+        f_{kk} &= \frac{\partial^2 f}{\partial k^2} = A \alpha (\alpha - 1) k^{\alpha - 2} l^{\beta} < 0 \\
+        f_{ll} &= \frac{\partial^2 f}{\partial l^2} = A \beta (\beta - 1) k^{\alpha} l^{\beta - 2} < 0 \\
+        f_{kl} &= \frac{\partial^2 f}{\partial k \partial l} = A \alpha \beta k^{\alpha - 1} l^{\beta - 1} > 0
+      \end{align*}
     \item Show that $e_{q,k} = \alpha$ and $e_{q,l}=\beta$. 
+      \begin{align*}
+        e_{q,k} &= \frac{\partial f}{\partial k} \cdot \frac{k}{f(k,l)} = \frac{A \alpha k^{\alpha - 1} l^{\beta} \cdot k}{A k^{\alpha} l^{\beta}} = \alpha \\
+        e_{q,l} &= \frac{\partial f}{\partial l} \cdot \frac{l}{f(k,l)} = \frac{A \beta k^{\alpha} l^{\beta - 1} \cdot l}{A k^{\alpha} l^{\beta}} = \beta
+      \end{align*}
     \item In footnote 5, we defined the scale elasticity as 
       $$e_{q,t}=\frac{\partial f(tk,tl)}{\partial t} \cdot \frac{t}{f(tk,tl)}$$
       where the expression is to be evaluated at $t=1$. Show that, for this Cobb-Douglas function,
       $e_{q,t} = \alpha + \beta$/ Hence in this case the elasticity and the returns to scale of the production 
       function agree (for more on this concept see Problem 9.9).
+            \begin{align*}
+        \frac{dF}{dt} &= A (\alpha + \beta) t^{\alpha + \beta - 1} k^{\alpha} l^{\beta} \\
+        f(tk, tl) &= A t^{\alpha + \beta} k^{\alpha} l^{\beta}
+      \end{align*}
+      \[
+e_{q,t} = \left. \frac{\partial f(tk,tl)}{\partial t} \cdot \frac{t}{f(tk,tl)} \right|_{t=1} 
+= \left. \frac{A (\alpha + \beta) t^{\alpha + \beta - 1} k^{\alpha} l^{\beta} \cdot t}{A t^{\alpha + \beta} k^{\alpha} l^{\beta}} \right|_{t=1} = \alpha + \beta
+\]
     \item Show that this function is quasi-concave.
+
+
+\[
+\log f(k, l) = \log A + \alpha \log k + \beta \log l
+\]
+
+\textbf{Answer:} This function is concave in \( \log k \) and \( \log l \), which implies \( f \) is log-concave, and hence quasi-concave.
     \item Show that the function is concave for $\alpha + \beta \ge 1$ but not concave for $alpha + \beta > 1$.
+
+\[
+H = 
+\begin{bmatrix}
+f_{kk} & f_{kl} \\
+f_{lk} & f_{ll}
+\end{bmatrix}
+=
+A
+\begin{bmatrix}
+\alpha(\alpha - 1) k^{\alpha - 2} l^{\beta} & \alpha \beta k^{\alpha - 1} l^{\beta - 1} \\
+\alpha \beta k^{\alpha - 1} l^{\beta - 1} & \beta(\beta - 1) k^{\alpha} l^{\beta - 2}
+\end{bmatrix}
+\]
+
+
+\[
+\det(H) = A^2 k^{2\alpha - 2} l^{2\beta - 2} \left[(\alpha - 1)(\beta - 1) - \alpha \beta \right]
+\]
+
+\[
+(\alpha - 1)(\beta - 1) \geq \alpha \beta \quad \Rightarrow \quad \alpha + \beta \leq 1
+\]
+
+\textbf{Answer:} Thus, the function is concave when \( \alpha + \beta \leq 1 \), and not concave when \( \alpha + \beta > 1 \).
   \end{enumerate}
 \end{homeworkProblem}
 
@@ -194,5 +245,10 @@
     \item In general, what can you say about AC and MC for homothetic production functions with no fixed cost?
   \end{enumerate}
 \end{homeworkProblem}
+\begin{enumerate}
+\item \textbf{Quasi-Concavity:}
 
+
+
+\end{enumerate}
 \end{document}
