@@ -278,22 +278,72 @@ cases:
   are $w$ and  $v$ respectively. Aside from the cost of labor and capital, there are no cost. 
   \begin{enumerate}
     \item What type of production function is this? Hint: Not Cobb-Douglas 
+    
+    special case of Constant Elasticity of Substitution production function.
     \item Use your answer from part (a) to find the elasticity of substitution. Hint: There is a simple formula for 
-      elasticity of substitution related to the functional form. 
+    \[
+    \sigma = \frac{1}{1 - r}
+    \]
+    \( r = \frac{1}{2} \Rightarrow \sigma = \frac{1}{1 - \frac{1}{2}} = 2 \). \\
+    \[
+    \boxed{\sigma = 2}
+    \]
     \item Find RTS (l for k).
+    \[
+    MP_k = \frac{\partial q}{\partial k} = \frac{\sqrt{k} + \sqrt{l}}{\sqrt{k}}, \quad MP_l = \frac{\partial q}{\partial l} = \frac{\sqrt{k} + \sqrt{l}}{\sqrt{l}}
+    \]
+    \[
+    RTS_{l,k} = \frac{MP_l}{MP_k} = \frac{\sqrt{k}}{\sqrt{l}} = \boxed{\sqrt{\frac{k}{l}}}
+    \]
     \item Find the total cost function. 
+    \[
+    C = v x^2 + w (\sqrt{q} - x)^2 = (v + w)x^2 - 2w x \sqrt{q} + wq
+    \]
+    \[
+    \frac{dC}{dx} = 2(v + w)x - 2w \sqrt{q} = 0 \Rightarrow x = \frac{w}{v + w} \sqrt{q}
+    \]
+    \[
+    k = \left( \frac{w}{v + w} \right)^2 q, \quad l = \left( \frac{v}{v + w} \right)^2 q
+    \]
+    \[
+    C(q) = v k + w l = \frac{vw}{v + w} q
+    \]
+    \[
+    C(q) = \frac{vw}{v + w} q
+    \]
     \item Use your answer from part (d) to find the average cost.
+     \[
+    AC = \frac{C(q)}{q} = \boxed{\frac{vw}{v + w}}
+    \]
     \item Use your answer from part (d) to find marginal cost.
+        \[
+    MC = \frac{dC}{dq} = \boxed{\frac{vw}{v + w}}
+    \]
+
     \item Is the production function homothetic?
+    \[
+    f(k, l) = (\sqrt{k} + \sqrt{l})^2 \quad \text{is a monotonic transformation of} \quad \sqrt{k} + \sqrt{l}
+    \]
+    \boxed{\text{Yes, it is homothetic.}}
     \item Does the production function exhibit increasing, constant, or decreasing return to scale?
+          \[
+    f(\lambda k, \lambda l) = (\sqrt{\lambda k} + \sqrt{\lambda l})^2 = \lambda(\sqrt{k} + \sqrt{l})^2 = \lambda f(k, l)
+    \]
+    \boxed{\text{Constant Returns to Scale}}
+
     \item Is the expansion path linear?
+    \[
+    \frac{k}{l} = \left( \frac{w}{v} \right)^2 \Rightarrow \boxed{\text{Yes,linear.}}
+    \]
     \item In general, what can you say about AC and MC for homothetic production functions with no fixed cost?
+         For homothetic production functions with no fixed cost:
+    \begin{itemize}
+        \item If the production function has constant returns to scale, then both AC and MC are constant and equal.
+        \item This is because total cost is linear in output.
+    \end{itemize}
+    \[
+    \boxed{\text{AC and MC are constant and equal for CRS, homothetic functions with no fixed cost.}}
+    \]
   \end{enumerate}
 \end{homeworkProblem}
-\begin{enumerate}
-\item \textbf{Quasi-Concavity:}
-
-
-
-\end{enumerate}
 \end{document}
