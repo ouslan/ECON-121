@@ -146,9 +146,106 @@
   capital in the short run is fixed at $k_1$.
   \begin{enumerate}
     \item Find the short run cost function.
+      
+\[
+f(l, k) = l^{0.4}k^{0.1}
+\]
+\[
+q = l^{0.4}k_1^{0.1}
+\Rightarrow l^{0.4} = \frac{q}{k_1^{0.1}}
+\Rightarrow l = \left( \frac{q}{k_1^{0.1}} \right)^{\frac{1}{0.4}} = \left( \frac{q}{k_1^{0.1}} \right)^{2.5}
+\]
+\[
+C(q) = wl + 1 \cdot k_1
+\]
+\[
+C(q) = w \left( \frac{q}{k_1^{0.1}} \right)^{2.5} + k_1
+\]
+\[
+C(q) = w q^{2.5} k_1^{-0.25} + k_1
+\]
+
     \item Use the cost function to find the profit maximizing quantity. 
+
+\[
+C(q) = w q^{2.5} k_1^{-0.25} + k_1
+\]
+\[
+\pi(q) = pq - C(q) = pq - \left( w q^{2.5} k_1^{-0.25} + k_1 \right)
+\]
+\[
+\frac{d\pi}{dq} = p - \frac{d}{dq} \left( w q^{2.5} k_1^{-0.25} \right) = 0
+\]
+\[
+\frac{d}{dq} \left( w q^{2.5} k_1^{-0.25} \right) = w \cdot 2.5 q^{1.5} k_1^{-0.25}
+\]
+\[
+p = 2.5 w q^{1.5} k_1^{-0.25}
+\]
+\[
+q^{1.5} = \frac{p}{2.5 w k_1^{-0.25}} = \frac{p k_1^{0.25}}{2.5 w}
+\Rightarrow q = \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{2}{3}}
+\]
     \item Find the firm's unconditional demand for labor. 
+      \[
+q = l^{0.4}k_1^{0.1} \Rightarrow l = \left( \frac{q}{k_1^{0.1}} \right)^{\frac{1}{0.4}} = \left( \frac{q}{k_1^{0.1}} \right)^{2.5}
+\]
+\[
+q^* = \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{2}{3}}
+\]
+\[
+l^* = \left( \frac{1}{k_1^{0.1}} \cdot \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{2}{3}} \right)^{2.5}
+\]
+\[
+l^* = \left( \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{2}{3}} \cdot k_1^{-0.1} \right)^{2.5}
+= \left( \frac{p^{2/3} k_1^{0.25 \cdot \frac{2}{3}}}{(2.5 w)^{2/3} k_1^{0.1}} \right)^{2.5}
+\]
+\[
+= \left( \frac{p^{2/3}}{(2.5 w)^{2/3}} \cdot k_1^{\frac{0.5}{3} - 0.1} \right)^{2.5}
+= \left( \frac{p^{2/3}}{(2.5 w)^{2/3}} \cdot k_1^{\frac{1}{6} - \frac{1}{10}} \right)^{2.5}
+\]
+\[
+\frac{1}{6} - \frac{1}{10} = \frac{5 - 3}{30} = \frac{2}{30} = \frac{1}{15}
+\]
+\[
+l^* = \left( \frac{p^{2/3}}{(2.5 w)^{2/3}} \cdot k_1^{1/15} \right)^{2.5}
+= \frac{p^{5/3}}{(2.5 w)^{5/3}} \cdot k_1^{\frac{2.5}{15}} = \frac{p^{5/3}}{(2.5 w)^{5/3}} \cdot k_1^{1/6}
+\]
+
     \item Find the profit function.
+\[
+q^* = \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{2}{3}}, \quad
+C(q^*) = w q^{2.5} k_1^{-0.25} + k_1
+\]
+\[
+pq^* = p \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{2}{3}} = p^{\frac{5}{3}} \cdot \left( \frac{k_1^{0.25}}{2.5 w} \right)^{\frac{2}{3}}
+\]
+\[
+q^{2.5} = \left( \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{2}{3}} \right)^{2.5} 
+= \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{5}{3}}
+\]
+\[
+C(q^*) = w \left( \frac{p k_1^{0.25}}{2.5 w} \right)^{\frac{5}{3}} k_1^{-0.25} + k_1
+= w \cdot \frac{p^{5/3} k_1^{(0.25)(5/3)}}{(2.5 w)^{5/3}} \cdot k_1^{-0.25} + k_1
+\]
+\[
+= \frac{p^{5/3}}{(2.5)^{5/3} w^{2/3}} \cdot k_1^{\frac{5}{12} - \frac{1}{4}} + k_1
+\]
+\[
+= \frac{p^{5/3}}{(2.5)^{5/3} w^{2/3}} \cdot k_1^{\frac{5}{12} - \frac{3}{12}} + k_1
+= \frac{p^{5/3}}{(2.5)^{5/3} w^{2/3}} \cdot k_1^{1/6} + k_1
+\]
+\[
+\pi(p, w, k_1) = pq^* - C(q^*) 
+= \frac{p^{5/3}}{(2.5)^{2/3} w^{2/3}} k_1^{1/6}
+- \left( \frac{p^{5/3}}{(2.5)^{5/3} w^{2/3}} k_1^{1/6} + k_1 \right)
+\]
+\[
+= \left( \frac{p^{5/3}}{(2.5)^{2/3} w^{2/3}} - \frac{p^{5/3}}{(2.5)^{5/3} w^{2/3}} \right) k_1^{1/6} - k_1
+\]
+\[
+= \frac{p^{5/3} k_1^{1/6}}{w^{2/3}} \left( \frac{1}{(2.5)^{2/3}} - \frac{1}{(2.5)^{5/3}} \right) - k_1
+\]
   \end{enumerate}
   Now suppose capital is variable (long run)
   \begin{enumerate}
