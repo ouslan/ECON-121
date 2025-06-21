@@ -1,0 +1,270 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Midterm\ \#1}
+\newcommand{\hmwkDueDate}{May 29, 2025}
+\newcommand{\hmwkClass}{ECON 219}
+\newcommand{\hmwkClassInstructor}{Dr. Jasmine N Fuller}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Problem 1
+\begin{homeworkProblem}
+	Let $U(x,y) = \sqrt{x} + \sqrt{y}$. Find the following:
+	\begin{enumerate}
+		\item Marshallian demand function for $x$ and $y$.
+		\item Indirect utility function.
+		\item Expenditure function.
+		\item Write the Slutsky equation for good $x$.
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 2 
+\begin{homeworkProblem}
+	Determine the marginal rate of substitution (MRS) for the following utility functions:
+	\begin{enumerate}
+		\item $U(x,y) = X^{1/4} + 3y$
+		\item $U(x,y) = X^{1/4} + y^{1/4}$
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 3
+\begin{homeworkProblem}
+	What si the effect of imposing a \$10,000 lump-sum tax on a monopolist? Assume the firm
+	continues to operate after the tax.
+	\begin{enumerate}
+		\item The firm experiences no change in the profit-maximizing price or quantity or
+		      in its profit.
+		\item The firm experiences no change in the profit-maximizing price and quantity,
+		      but its profit decreases
+		\item The firm experiences no change in the profit-maximizing price and quantity,
+		      but its profit decreases
+		\item The firm's profit-maximizing quantity increases, but price does not change.
+		\item The firm's profit-maximizing price decreases, but quantity does not change.
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 4 
+\begin{homeworkProblem}
+	Consider the production function $q = f(k,l) = l^{0.5}k^{0.1}$. The cost of labor and
+	capital are $w$ and $v$ respectively. Aside from the cost of labor and capital, there
+	there are no cost. Initially assume $k$ is fixed at $k_1$.
+	\begin{enumerate}
+		\item Is this function constant return to scale, increasing returns to scale, or decreasing
+		      returns to scale? Explain.
+		\item Find the short run cost function $C_{SR(q)}$
+		\item Find short run marginal cost.
+		\item Find short run average cost.
+		\item Demostrare that cost is minimized when $AC = MC$.
+
+		      Now assume all inputs are variables.
+
+		\item Find the long run cost function $C_{LR(q)}$.
+		\item Find long run marginal cost.
+		\item Use you answer from part (a) to find the elasticity of substitution
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 6
+\begin{homeworkProblem}
+	A monopolist has a cost function $C(q)= \frac{q^2}{2}$. The monopolist faces a
+	market demand curve given $q=10-p$.
+	\begin{enumerate}
+		\item Find marginal cost.
+		\item Calculate the profit-maximizing price-quantity combination for the monopolist.
+		      Also calculate the monopolist's profits.
+		\item What output level would be produced by this industry under perfect competition?
+		\item Calculate the consumer surplus obtained in case (c). Show that this exceeds
+		      the sum of monopolist's profit and the consumer surplus received in case (b)
+		      What is the value of the dead weight loss from the monopolization?
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Prroblem 7
+\begin{homeworkProblem}
+	If the value of th eprice elasticity of demand is 0.2, this means that
+	\begin{enumerate}
+		\item a 20\% decreases in price cause a 1\% increase in quantity demanded.
+		\item a 5\% decrease in price causes a 1\% increase in quantity demanded
+		\item a 0.2\% decrease in price causes a 0.2\% increase in quantity demanded.
+		\item a 100\% decrease in price cause a 200\% increase in quantity demanded.
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 8
+\begin{homeworkProblem}
+	Suppose the production possibility frontier for an economy that produces on public
+	and one private good (x) is given by
+	$$x^2 + 100 y^2 = 5000$$
+	This economy is populated by 100 identical individuals, each with a utility function
+	of the from
+	$$U(x,y) = \sqrt{xy}$$
+	Where $x_i$ is the individual's share of private good production (=x/100).
+	Notice that the public good is nonexclusive and that everyone benefits equally
+	from its level of production.
+	\begin{enumerate}
+		\item If the market for $x$ and $y$ were perfectly competitive, what levels of those goods
+		      would be produced? What would the typical individual's utlitty be in this situation?
+		\item What are the optimal production levels for $x$ and $y$? What would the typical
+		      individual's utility level be? (Hint: The numbers in this problem do not come out evenly, and some approximations should suffice.)
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 9
+\begin{homeworkProblem}
+	Which of the following is true of perfect price discrimination?
+	\begin{enumerate}
+		\item Profit is lower than it would be without discrimination.
+		\item Revenue is higher then it would be without discrimination.
+		\item (Hint: The numbers in this problem do not come out evenly,
+		      and some approximations should suffice.)
+		\item Profit is zero
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 10
+\begin{homeworkProblem}
+	If fixed cost at $Q=100$ is \$130, then
+	\begin{enumerate}
+		\item fixed cost $Q = 0$ is \$0
+		\item fixed cost at Q = 0 is less than \$130.
+		\item fixed cost at Q = 200 is \$260.
+		\item fixed cost at Q = 200 is \$130.
+		\item it is impossible to calculate fixed costs at any other quantity.
+	\end{enumerate}
+\end{homeworkProblem}
+
+
+\end{document}
