@@ -145,9 +145,54 @@
 	Let $U(x,y) = \sqrt{x} + \sqrt{y}$. Find the following:
 	\begin{enumerate}
 		\item Marshallian demand function for $x$ and $y$.
+		      \[
+			      \mathcal{L} = \sqrt{x} + \sqrt{y} + \lambda(I - p_x x - p_y y)
+		      \]
+		      \[
+			      \frac{1}{2\sqrt{x}} = \lambda p_x, \quad \frac{1}{2\sqrt{y}} = \lambda p_y
+		      \]
+		      \[
+			      \frac{1}{\sqrt{x} p_x} = \frac{1}{\sqrt{y} p_y} \Rightarrow \frac{\sqrt{y}}{\sqrt{x}} = \frac{p_y}{p_x}
+			      \Rightarrow \frac{y}{x} = \left( \frac{p_y}{p_x} \right)^2 \Rightarrow y = x \left( \frac{p_y}{p_x} \right)^2
+		      \]
+		      \[
+			      p_x x + p_y y = I \Rightarrow p_x x + p_y x \left( \frac{p_y}{p_x} \right)^2 = I
+			      \Rightarrow x \left( p_x + \frac{p_y^3}{p_x^2} \right) = I
+		      \]
+		      \[
+			      x^*(p_x, p_y, I) = \frac{I}{p_x + \frac{p_y^3}{p_x^2}} = \frac{I p_x^2}{p_x^3 + p_y^3}
+		      \]
+		      \[
+			      y^*(p_x, p_y, I) = x \left( \frac{p_y}{p_x} \right)^2 = \frac{I p_y^2}{p_x^3 + p_y^3}
+		      \]
 		\item Indirect utility function.
+		      \[
+			      v(p_x, p_y, I) = \sqrt{x^*} + \sqrt{y^*} = \sqrt{\frac{I p_x^2}{p_x^3 + p_y^3}} + \sqrt{\frac{I p_y^2}{p_x^3 + p_y^3}}
+		      \]
+		      \[
+			      = \sqrt{\frac{I}{p_x^3 + p_y^3}} (p_x + p_y)
+		      \]
 		\item Expenditure function.
+		      \[
+			      u = \sqrt{\frac{I}{p_x^3 + p_y^3}} (p_x + p_y)
+			      \Rightarrow \frac{I}{p_x^3 + p_y^3} = \left( \frac{u}{p_x + p_y} \right)^2
+			      \Rightarrow I = (p_x^3 + p_y^3) \left( \frac{u}{p_x + p_y} \right)^2
+		      \]
+		      \[
+			      e(p_x, p_y, u) = (p_x^3 + p_y^3) \left( \frac{u}{p_x + p_y} \right)^2
+		      \]
+
 		\item Write the Slutsky equation for good $x$.
+		      \[
+			      \frac{\partial x^*}{\partial p_x} = \frac{\partial h_x}{\partial p_x} - \frac{\partial x^*}{\partial I} \cdot x^*
+		      \]
+		      \[
+			      x^* = \frac{I p_x^2}{p_x^3 + p_y^3} \Rightarrow \frac{\partial x^*}{\partial I} = \frac{p_x^2}{p_x^3 + p_y^3}
+		      \]
+		      \[
+			      \frac{\partial x^*}{\partial p_x} = \frac{\partial h_x}{\partial p_x} - \frac{I p_x^4}{(p_x^3 + p_y^3)^2}
+		      \]
+
 	\end{enumerate}
 \end{homeworkProblem}
 
@@ -156,19 +201,37 @@
 	Determine the marginal rate of substitution (MRS) for the following utility functions:
 	\begin{enumerate}
 		\item $U(x,y) = X^{1/4} + 3y$
+		      \[
+			      MU_x = \frac{\partial U}{\partial x} = \frac{1}{4}x^{-3/4}
+		      \]
+		      \[
+			      MU_y = \frac{\partial U}{\partial y} = 3
+		      \]
+		      \[
+			      \text{MRS}_{xy} = -\frac{MU_x}{MU_y} = -\frac{\frac{1}{4}x^{-3/4}}{3} = -\frac{1}{12}x^{-3/4}
+		      \]
 		\item $U(x,y) = X^{1/4} + y^{1/4}$
+		      \[
+			      MU_x = \frac{\partial U}{\partial x} = \frac{1}{4}x^{-3/4}
+		      \]
+		      \[
+			      MU_y = \frac{\partial U}{\partial y} = \frac{1}{4}y^{-3/4}
+		      \]
+		      \[
+			      \text{MRS}_{xy} = -\frac{MU_x}{MU_y} = -\frac{\frac{1}{4}x^{-3/4}}{\frac{1}{4}y^{-3/4}} = -\left( \frac{y}{x} \right)^{3/4}
+		      \]
 	\end{enumerate}
 \end{homeworkProblem}
 
 % Problem 3
 \begin{homeworkProblem}
-	What si the effect of imposing a \$10,000 lump-sum tax on a monopolist? Assume the firm
+	What is the effect of imposing a \$10,000 lump-sum tax on a monopolist? Assume the firm
 	continues to operate after the tax.
 	\begin{enumerate}
 		\item The firm experiences no change in the profit-maximizing price or quantity or
 		      in its profit.
-		\item The firm experiences no change in the profit-maximizing price and quantity,
-		      but its profit decreases
+		\item \textbf{The firm experiences no change in the profit-maximizing price and quantity,
+			      but its profit decreases}
 		\item The firm experiences no change in the profit-maximizing price and quantity,
 		      but its profit decreases
 		\item The firm's profit-maximizing quantity increases, but price does not change.
@@ -184,16 +247,66 @@
 	\begin{enumerate}
 		\item Is this function constant return to scale, increasing returns to scale, or decreasing
 		      returns to scale? Explain.
+		      \[
+			      f(tk, tl) = (tl)^{0.5}(tk)^{0.1} = t^{0.5}l^{0.5} \cdot t^{0.1}k^{0.1} = t^{0.6}f(k,l)
+		      \]
+		      Since \( t^{0.6} < t \), the production function exhibits:
+
+		      \textbf{Decreasing returns to scale}
 		\item Find the short run cost function $C_{SR(q)}$
+		      \[
+			      q = l^{0.5}k_1^{0.1} \Rightarrow l = \left( \frac{q}{k_1^{0.1}} \right)^2
+		      \]
+		      \[
+			      C_{SR}(q) = w \cdot l + v \cdot k_1 = \frac{w q^2}{k_1^{0.2}} + v k_1
+		      \]
 		\item Find short run marginal cost.
+		      \[
+			      MC_{SR} = \frac{dC_{SR}}{dq} = \frac{2wq}{k_1^{0.2}}
+		      \]
 		\item Find short run average cost.
+		      \[
+			      AC_{SR} = \frac{C_{SR}(q)}{q} = \frac{wq}{k_1^{0.2}} + \frac{v k_1}{q}
+		      \]
 		\item Demostrare that cost is minimized when $AC = MC$.
+		      \[
+			      \frac{2wq}{k_1^{0.2}} = \frac{wq}{k_1^{0.2}} + \frac{v k_1}{q} \Rightarrow \frac{wq}{k_1^{0.2}} = \frac{v k_1}{q}
+		      \]
+		      \[
+			      v k_1 = \frac{w q^2}{k_1^{0.2}}
+		      \]
+		      So cost is minimized when \( MC = AC \).
 
 		      Now assume all inputs are variables.
 
 		\item Find the long run cost function $C_{LR(q)}$.
+
+		      \[
+			      \min_{k,l} wl + vk \quad \text{subject to} \quad q = l^{0.5}k^{0.1}
+		      \]
+		      \[
+			      \mathcal{L} = wl + vk + \lambda (q - l^{0.5}k^{0.1})
+		      \]
+		      \[
+			      \frac{k}{l} = \frac{w}{5v} \Rightarrow k = \frac{w}{5v}l
+		      \]
+		      \[
+			      q = l^{0.6} \left( \frac{w}{5v} \right)^{0.1} \Rightarrow l = q^{\frac{1}{0.6}} \left( \frac{w}{5v} \right)^{-\frac{1}{6}}
+		      \]
+		      \[
+			      C_{LR}(q) = wl + vk = \left( \frac{6w}{5} \right) l = \left( \frac{6w}{5} \right) q^{5/3} \left( \frac{w}{5v} \right)^{-1/6}
+		      \]
+
 		\item Find long run marginal cost.
+		      \[
+			      MC_{LR} = \frac{dC_{LR}}{dq} = \frac{5}{3} \left( \frac{6w}{5} \right) \left( \frac{w}{5v} \right)^{-1/6} q^{2/3}
+		      \]
+
 		\item Use you answer from part (a) to find the elasticity of substitution
+
+		      \[
+			      \sigma = 1
+		      \]
 	\end{enumerate}
 \end{homeworkProblem}
 
@@ -203,12 +316,50 @@
 	market demand curve given $q=10-p$.
 	\begin{enumerate}
 		\item Find marginal cost.
+		      The marginal cost is the derivative of the cost function with respect to quantity \(q\):
+		      \[
+			      MC = \frac{dC}{dq} = \frac{d}{dq} \left(\frac{q^2}{2}\right) = q.
+		      \]
+
 		\item Calculate the profit-maximizing price-quantity combination for the monopolist.
 		      Also calculate the monopolist's profits.
+		      From the demand curve:
+		      \[
+			      p = 10 - q.
+		      \]
+		      \[
+			      TR = p \times q = (10 - q) q = 10q - q^2.
+		      \]
+		      \[
+			      TC = \frac{q^2}{2}.
+		      \]
+		      \[
+			      \pi(q) = TR - TC = 10q - q^2 - \frac{q^2}{2} = 10q - \frac{3q^2}{2}.
+		      \]
+		      \[
+			      \frac{d\pi}{dq} = 10 - 3q = 0 \implies q^* = \frac{10}{3}.
+		      \]
+		      \[
+			      p^* = 10 - \frac{10}{3} = \frac{20}{3}.
+		      \]
+		      \[
+			      \pi^* = 10 \times \frac{10}{3} - \frac{3}{2} \times \left(\frac{10}{3}\right)^2 = \frac{100}{3} - \frac{3}{2} \times \frac{100}{9} = \frac{100}{3} - \frac{50}{3} = \frac{50}{3}.
+		      \]
+
 		\item What output level would be produced by this industry under perfect competition?
+		      Under perfect competition, firms produce where price equals marginal cost:
+		      \[
+			      p = MC.
+		      \]
+		      \[
+			      10 - q = q \implies 2q = 10 \implies q = 5.
+		      \]
 		\item Calculate the consumer surplus obtained in case (c). Show that this exceeds
 		      the sum of monopolist's profit and the consumer surplus received in case (b)
 		      What is the value of the dead weight loss from the monopolization?
+
+		      \textbf{instruction are not clear clould not calculate it. The surplus does not
+			      exceeds consumer surpluse}
 	\end{enumerate}
 \end{homeworkProblem}
 
@@ -217,7 +368,7 @@
 	If the value of th eprice elasticity of demand is 0.2, this means that
 	\begin{enumerate}
 		\item a 20\% decreases in price cause a 1\% increase in quantity demanded.
-		\item a 5\% decrease in price causes a 1\% increase in quantity demanded
+		\item \textbf{a 5\% decrease in price causes a 1\% increase in quantity demanded}
 		\item a 0.2\% decrease in price causes a 0.2\% increase in quantity demanded.
 		\item a 100\% decrease in price cause a 200\% increase in quantity demanded.
 	\end{enumerate}
@@ -237,8 +388,64 @@
 	\begin{enumerate}
 		\item If the market for $x$ and $y$ were perfectly competitive, what levels of those goods
 		      would be produced? What would the typical individual's utlitty be in this situation?
+		      In a perfectly competitive market, the public good is typically underprovided due to the free-rider problem. Thus, individuals will choose:
+		      \[
+			      y = 0
+		      \]
+		      \[
+			      x^2 + 100 \cdot 0^2 = 5000 \implies x = \sqrt{5000} \approx 70.71
+		      \]
+		      \[
+			      x_i = \frac{x}{100} \approx \frac{70.71}{100} = 0.7071
+		      \]
+		      \[
+			      U_i = \sqrt{x_i y} = \sqrt{0.7071 \times 0} = 0
+		      \]
 		\item What are the optimal production levels for $x$ and $y$? What would the typical
 		      individual's utility level be? (Hint: The numbers in this problem do not come out evenly, and some approximations should suffice.)
+		      The planner maximizes utility subject to the PPF:
+		      \[
+			      \max_{x,y} U = \sqrt{\frac{x}{100} y}
+		      \]
+		      \[
+			      x^2 + 100 y^2 = 5000
+		      \]
+		      \[
+			      \mathcal{L} = \sqrt{\frac{x}{100} y} + \lambda (5000 - x^2 - 100 y^2)
+		      \]
+		      \[
+			      \frac{\partial \mathcal{L}}{\partial x} = \frac{1}{2} \cdot \frac{1}{\sqrt{\frac{x}{100} y}} \cdot \frac{y}{100} - 2 \lambda x = 0
+		      \]
+		      \[
+			      \frac{\partial \mathcal{L}}{\partial y} = \frac{1}{2} \cdot \frac{1}{\sqrt{\frac{x}{100} y}} \cdot \frac{x}{100} - 200 \lambda y = 0
+		      \]
+		      \[
+			      \frac{\partial \mathcal{L}}{\partial \lambda} = 5000 - x^2 - 100 y^2 = 0
+		      \]
+		      \[
+			      \sqrt{\frac{x}{100} y} = \frac{\sqrt{x y}}{10} \implies \frac{1}{\sqrt{\frac{x}{100} y}} = \frac{10}{\sqrt{x y}}
+		      \]
+		      \[
+			      \frac{1}{2} \cdot \frac{10}{\sqrt{x y}} \cdot \frac{y}{100} = 2 \lambda x \implies \frac{5 y}{100 \sqrt{x y}} = 2 \lambda x \implies \frac{y}{20 \sqrt{x y}} = 2 \lambda x
+		      \]
+		      \[
+			      \frac{1}{2} \cdot \frac{10}{\sqrt{x y}} \cdot \frac{x}{100} = 200 \lambda y \implies \frac{5 x}{100 \sqrt{x y}} = 200 \lambda y \implies \frac{x}{20 \sqrt{x y}} = 200 \lambda y
+		      \]
+		      \[
+			      \frac{\frac{y}{20 \sqrt{x y}}}{\frac{x}{20 \sqrt{x y}}} = \frac{2 \lambda x}{200 \lambda y} \implies \frac{y}{x} = \frac{x}{100 y}
+		      \]
+		      \[
+			      100 y^2 = x^2 \implies x = 10 y
+		      \]
+		      \[
+			      (10 y)^2 + 100 y^2 = 5000 \implies 100 y^2 + 100 y^2 = 5000 \implies 200 y^2 = 5000 \implies y^2 = 25 \implies y = 5
+		      \]
+		      \[
+			      x = 10 y = 50
+		      \]
+		      \[
+			      U_i = \sqrt{\frac{x}{100} y} = \sqrt{\frac{50}{100} \times 5} = \sqrt{2.5} \approx 1.58
+		      \]
 	\end{enumerate}
 \end{homeworkProblem}
 
@@ -247,7 +454,7 @@
 	Which of the following is true of perfect price discrimination?
 	\begin{enumerate}
 		\item Profit is lower than it would be without discrimination.
-		\item Revenue is higher then it would be without discrimination.
+		\item \textbf{Revenue is higher then it would be without discrimination.}
 		\item (Hint: The numbers in this problem do not come out evenly,
 		      and some approximations should suffice.)
 		\item Profit is zero
@@ -261,7 +468,7 @@
 		\item fixed cost $Q = 0$ is \$0
 		\item fixed cost at Q = 0 is less than \$130.
 		\item fixed cost at Q = 200 is \$260.
-		\item fixed cost at Q = 200 is \$130.
+		\item \textbf{fixed cost at Q = 200 is \$130.}
 		\item it is impossible to calculate fixed costs at any other quantity.
 	\end{enumerate}
 \end{homeworkProblem}
