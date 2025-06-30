@@ -140,6 +140,68 @@
 
 \pagebreak
 
+% Homework problem 1
 \begin{homeworkProblem}
+	You have \$100 to invest and are wondering where to put it. You are considering whether to buy your
+	favorite stock (B) or put it in your couch (C), either decision occurring today. You know the stock price
+	today, conveniently enough \$100 per share, but you don’t know the stock price tomorrow. For simplicity,
+	it could either be double (\$200) or nothing (\$0), with the probability of double being $p$, and the
+	probability of nothing being $1 - p$. If you invest in your couch you get your \$100 back tomorrow. Your
+	discount factor is $\delta$, and you are risk neutral (i.e. your payoffs only depend on time discounting and
+	money.)
+	\begin{enumerate}
+		\item Draw the complete game tree, with nature and player 1.
+		\item At what level of $p$ should you buy you favorite stock?
+		\item Why doesn't $\delta$ affect part (b)?
+		\item Suppose $p$ is greater than you answer in part (b). Martha Stewart knows what the stok price is
+		      going to be tomorrow, and offers to sell this information to you. You trust that she knows and is
+		      being honest because her written offer is finely hand-crafted using everyday houshold items.
+		      Assuming you only concern is making money and discounting for time (instead of moral quams),
+		      or going to prison), how much would you be willing to pay for this information?
+	\end{enumerate}
 \end{homeworkProblem}
+
+% Homework problem 2 
+\begin{homeworkProblem}
+	There was an old game show called “Let’s Make a Deal” hosted by Monty Hall. In it was a game where a
+	prize was hidden behind one of three doors, and behind the other two doors were goats. The contestant
+	initially chose a door; then Monty Hall would open one of the doors the contestant did not pick to reveal a
+	goat. Then the contestant had the option to stay with the door he chose or switch to the other un-opened
+	door.
+
+	Suppose you are playing this game, the “prize” is worth \$10,000, and a goat is worth nothing. Since it’s
+	random anyway, you already chose door A (the decision is “sunk” and is not part of the game directly).
+	The game starts as nature randomly determines where the prize is (1/3 chance for any of the three doors);
+	then Monty Hall selects one of doors B or C that has a goat (also a move by nature); then you choose to
+	Stay at door A or to Switch to the unopened door. Finally, the outcome is resolved – either you find a goat
+	or the prize behind the door you finally selected.
+	z
+	If both B and C have a goat, Monty flips a coin (50/50 chance) to determine which one to open. If either
+	B or C have the car, there is only one available door Monty can open, so he opens that one.
+
+	Now, we draw the complete game tree; I detail it in several steps to try and help you
+
+	\begin{enumerate}
+		\item Draw the first mover, Nature, picking which door has the prize, A,B,or C. Make sure to include
+		      probabilities!
+		\item Draw the second mover, Nature (again!). picking which door to open - B or C. If it's a
+		      degenerate lottery, you don't have to actully draw a new branch of the tree. But when it isn't a
+		      degenerate lottery, you actually have to draw out the branches of the decision tree and think about
+		      what is happening.
+		\item Draw the third and final mover, the player (you), picking either to Stay at door A or Switch to the only
+		      other door available.
+		\item Finally, list the payoffs at each terminal node. It's either \$10,000 if the player's decision led to the
+		      prize, or \$0if it didn't
+
+		      Congrats, you just made a big, wonderful game tree!
+
+		\item Using that big, wonderful game tree, calculate the probility you get the prize (\$10,000) for each
+		      combination: Door B has a goat and you Stay (pick A), Door B has a goat and you Switch (pick C),
+		      Door C has a goat and you Stay (pick A), Door B has a goat and you Switch (pick B).
+		\item What should you do?
+	\end{enumerate}
+
+
+\end{homeworkProblem}
+
 \end{document}
