@@ -143,11 +143,11 @@
 \begin{homeworkProblem}
 	\begin{enumerate}
 		\item Explain why chess in not a static game of complete information.
-		\item Consider the following game: I write down a nuber (1,2, or 3)
+		\item Consider the following game: I write down a number (1,2, or 3)
 		      on a card and set it down. If you guess the right number, I give you
 		      \$1. If you guess the wrong number, you give me \$1. Don't solve it; just
 		      explain why this is a static game of complete information and draw the matrix
-		      represention of the game.
+		      representation of the game.
 		\item Explain the three criteria we use to evaluate solution concepts, and use them
 		      to compare Dominant Strategy Equilibrium with the solution concept of "anything can happen."
 		\item What is a Pareto dominated outcome? Compare with a Pareto optimal/efficient outcome.
@@ -158,28 +158,49 @@
 	Consider the following matrix form game:
 
 
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{c|c c c}
+			$P_1/P_2$ & X       & Y      & Z       \\
+			\hline
+			A         & (1, 4)  & (4, 5) & (8, 2)  \\
+			B         & (5, 4)  & (1, 6) & (7, 5)  \\
+			C         & (0, 11) & (3, 9) & (10, 2) \\
+		\end{tabular}
+	\end{table}
+
 	Use Iterated Elimination of Dominated Strategies to find the unique solution.
 	Show you work.
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
 	Consider two player: The contestant (C) and the preditor (P). There are two
-	boxes, one opaque and one trasparent. The transparent box has \$1000 in it for sure.
+	boxes, one opaque and one transparent. The transparent box has \$1000 in it for sure.
 	$P$ either puts \$0 or \$1,000,000 in the opaque box, unseen by C. Then, C chooses
 	either to select only the opaque box (one-box) or both boxes (two-box). C's payoff
-	is simply to maximize his monetary gain. P's strange preferences are to demostrate his
-	correct predicion in the following way: Only put money in the box if he thinks
+	is simply to maximize his monetary gain. P's strange preferences are to demonstrate his
+	correct prediction in the following way: Only put money in the box if he thinks
 	C will select one box; otherwise, do not put money in the box (ignore mixed strategies for this problem).
-	If P predixts correctly, his payoff is 10; otherwise it is 0. Here is the game in matrix form:
+	If P predicts correctly, his payoff is 10; otherwise it is 0. Here is the game in matrix form:
+
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{c|c c}
+			$contestant/predictor$ & One-box        & Two-box              \\
+			\hline
+			A                      & ($10$, $10^6$) & ($4$, $10^6 + 10^3$) \\
+			B                      & ($0$, $0$)     & ($1$, $10^3$)        \\
+		\end{tabular}
+	\end{table}
 
 	\begin{enumerate}
 		\item Explain why this is a static game of complete information.
-		\item Fin dhte uniwue surviving set of stategies using IESD.
+		\item Find the unique surviving set of strategies using IESD.
 		\item Now suppose P (somehow) observe what C will do before C even acts, and this ability
-		      is common knowledge. Explain why this not a static game. who effectively moves first as
+		      is common knowledge. Explain why this not a static game. Who effectively moves first as
 		      far as the game is concerned, and who then observes that first move?
 		\item If you read ahead to chapter 7 and 8, we will discuss dynamic games of complete information.
-		      Solve the dynamic games you described in part (c) using Subgame Perfect Nash Equilibrium.
+		      Solve the dynamic games you described in part (c) using Sub game Perfect Nash Equilibrium.
 	\end{enumerate}
 \end{homeworkProblem}
 
