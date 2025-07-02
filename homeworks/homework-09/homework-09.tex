@@ -143,22 +143,66 @@
 \begin{homeworkProblem}
 	\begin{enumerate}
 		\item Explain why chess in not a static game of complete information.
+		      Chess is not a static game of complete information because:
+		      \begin{itemize}
+			      \item It is not a simultaneous game.
+			      \item Even though both players have complete knowledge of the game board at any given time, there are too many possibilites on the players decision tree
+			      \item Chess involves foresight and dynamic strategy, so it is a dynamic game rather than static.
+		      \end{itemize}
 		\item Consider the following game: I write down a number (1,2, or 3)
 		      on a card and set it down. If you guess the right number, I give you
 		      \$1. If you guess the wrong number, you give me \$1. Don't solve it; just
 		      explain why this is a static game of complete information and draw the matrix
 		      representation of the game.
+
+		      This is a static game because:
+		      \begin{itemize}
+			      \item Both players choose their actions (you guess a number) simultaneously.
+			      \item There is complete information: both players know the rules of the game, and the choices (1, 2, or 3) are known by both.
+			      \item No player has hidden information about the other's choices or the payoffs.
+		      \end{itemize}
+
+		      \begin{table}[h!]
+			      \centering
+			      \begin{tabular}{c|c c c}
+				      $I \text{ chooses}/P_2$ & 1 (You guess) & 2 (You guess) & 3 (You guess) \\
+				      \hline
+				      1                       & (1, -1)       & (-1, 1)       & (-1, 1)       \\
+				      2                       & (-1, 1)       & (1, -1)       & (-1, 1)       \\
+				      3                       & (-1, 1)       & (-1, 1)       & (1, -1)       \\
+			      \end{tabular}
+		      \end{table}
+
 		\item Explain the three criteria we use to evaluate solution concepts, and use them
 		      to compare Dominant Strategy Equilibrium with the solution concept of "anything can happen."
+		      \begin{itemize}
+			      \item \textbf{Rationality}: Each player makes decisions to maximize their own payoff based on the game's structure.
+			      \item \textbf{Stability}: A solution should result in players having no incentive to deviate from their strategy.
+			      \item \textbf{Equilibrium}: A solution is in equilibrium when no player can improve their payoff by unilaterally changing their strategy.
+		      \end{itemize}
+
+		      Comparison between Dominant Strategy Equilibrium and "anything can happen":
+		      \begin{itemize}
+			      \item \textbf{Dominant Strategy Equilibrium}: This is rational because players have clear strategies that maximize their payoffs. It is stable because no player wants to deviate, and it results in equilibrium.
+			      \item \textbf{"Anything can happen"}: This is not a rational strategy. It lacks stability, as players could change their behavior based on unpredictable factors, leading to an absence of equilibrium.
+		      \end{itemize}
+
 		\item What is a Pareto dominated outcome? Compare with a Pareto optimal/efficient outcome.
+		      \textbf{Pareto Dominated Outcome}: An outcome is Pareto dominated if there is another outcome where at least one player is better off, and no player is worse off.
+
+		      \textbf{Pareto Optimal/Efficient Outcome}: An outcome is Pareto optimal if no player can be made better off without making another player worse off.
+
+		      \begin{itemize}
+			      \item A Pareto dominated outcome is suboptimal; it means there is another outcome that can make someone better off without hurting others.
+			      \item A Pareto optimal outcome is efficient; no further improvements can be made without making someone else worse off.
+		      \end{itemize}
 	\end{enumerate}
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
 	Consider the following matrix form game:
 
-
-	\begin{table}[h!]
+	\begin{table}[!ht]
 		\centering
 		\begin{tabular}{c|c c c}
 			$P_1/P_2$ & X       & Y      & Z       \\
@@ -171,6 +215,66 @@
 
 	Use Iterated Elimination of Dominated Strategies to find the unique solution.
 	Show you work.
+
+
+	We will use Iterated Elimination of Dominated Strategies (IEDS) to find the unique solution.
+
+	\subsection*{Step 1: Eliminate Dominated Strategies for Player 1}
+
+	\begin{itemize}
+		\item $A$ to $B$:
+		      \begin{enumerate}
+			      \item For Player 2's strategy X, $A$ gives a payoff of 1 and $B$ gives 5. So, $B$ is better than $A$ for Player 2's X.
+			      \item For Player 2's strategy Y, $A$ gives a payoff of 4 and $B$ gives 1. So, $A$ is better than $B$ for Player 2's Y.
+			      \item  For Player 2's strategy Z, $A$ gives a payoff of 8 and $B$ gives 7. So, $A$ is better than $B$ for Player 2's Z.
+		      \end{enumerate}
+		      Thus, neither $A$ nor $B$ strictly dominates the other.
+
+		\item  $A$ to $C$:
+		      \begin{enumerate}
+			      \item		       For Player 2's strategy X, $A$ gives a payoff of 1 and $C$ gives 0. So, $A$ is better than $C$ for Player 2's X.
+			      \item For Player 2's strategy Y, $A$ gives a payoff of 4 and $C$ gives 3. So, $A$ is better than $C$ for Player 2's Y.
+			      \item  For Player 2's strategy Z, $A$ gives a payoff of 8 and $C$ gives 10. So, $C$ is better than $A$ for Player 2's Z.
+		      \end{enumerate}
+
+		      Since $A$ is not strictly better than $C$ for all strategies, we cannot eliminate either strategy based on this comparison.
+
+		\item $B$ to $C$:
+		      \begin{enumerate}
+			      \item  		       For Player 2's strategy X, $B$ gives a payoff of 5 and $C$ gives 0. So, $B$ is better than $C$ for Player 2's X.
+			      \item  For Player 2's strategy Y, $B$ gives a payoff of 1 and $C$ gives 3. So, $C$ is better than $B$ for Player 2's Y.
+			      \item For Player 2's strategy Z, $B$ gives a payoff of 7 and $C$ gives 10. So, $C$ is better than $B$ for Player 2's Z.
+		      \end{enumerate}
+		      Therefore, Player 1 will eliminate strategy $B$, as it is strictly dominated by strategy $C$.
+	\end{itemize}
+
+	\begin{itemize}
+		\item $X$ to $Y$:
+		      \begin{enumerate}
+			      \item 		       For Player 1's strategy A, $X$ gives a payoff of 4 and $Y$ gives 5. So, $Y$ is better than $X$ for Player 1's A.
+			      \item For Player 1's strategy C, $X$ gives a payoff of 11 and $Y$ gives 9. So, $X$ is better than $Y$ for Player 1's C.
+		      \end{enumerate}
+		      Therefore, we cannot eliminate either $X$ or $Y$ based on this comparison.
+
+		\item $X$ to $Z$:
+		      \begin{enumerate}
+			      \item 		       For Player 1's strategy A, $X$ gives a payoff of 4 and $Z$ gives 2. So, $X$ is better than $Z$ for Player 1's A.
+			      \item  For Player 1's strategy C, $X$ gives a payoff of 11 and $Z$ gives 2. So, $X$ is better than $Z$ for Player 1's C.
+		      \end{enumerate}
+		      Therefore, Player 2 will eliminate strategy $Z$, as it is strictly dominated by strategy $X$.
+	\end{itemize}
+
+	\[
+		\begin{array}{c|c c}
+			P_1/P_2 & X      & Y     \\
+			\hline
+			A       & (1,4)  & (4,5) \\
+			C       & (0,11) & (3,9) \\
+		\end{array}
+	\]
+
+	The unique solution to the game is for Player 1 to choose strategy $A$ and for Player 2 to choose strategy $X$, as these are the strategies that survive the Iterated Elimination of Dominated Strategies.
+
 \end{homeworkProblem}
 
 \begin{homeworkProblem}
@@ -183,7 +287,7 @@
 	C will select one box; otherwise, do not put money in the box (ignore mixed strategies for this problem).
 	If P predicts correctly, his payoff is 10; otherwise it is 0. Here is the game in matrix form:
 
-	\begin{table}[h!]
+	\begin{table}[!ht]
 		\centering
 		\begin{tabular}{c|c c}
 			$contestant/predictor$ & One-box        & Two-box              \\
@@ -195,12 +299,67 @@
 
 	\begin{enumerate}
 		\item Explain why this is a static game of complete information.
+
+		      This is a static game of complete information because both players (C and P) know the game structure, payoffs, and strategies available to each other. The game is static because players make their decisions simultaneously (in the sense that P chooses the amount to put in the opaque box before C makes their choice), and neither player has any information about the choices made by the other player at the time of their decision. There is no sequential aspect in terms of decision-making in this game; both players are essentially making their choices at the same time.
+
 		\item Find the unique surviving set of strategies using IESD.
+		      \begin{itemize}
+			      \item For Player C, selecting "One-box" (A) or "Two-box" (B) are the available strategies.
+			      \item If P chooses to predict C will play "One-box" (A), the payoffs are:
+			            \[
+				            \text{(A, One-box)} = (10, 10^6) \quad \text{and} \quad \text{(B, One-box)} = (0, 0).
+			            \]
+
+			            Player C gets 10 from choosing "One-box" and 0 from choosing "Two-box". Clearly, for C, "One-box" strictly dominates "Two-box" if P chooses "One-box".
+
+			      \item If P chooses to predict C will play "Two-box" (B), the payoffs are:
+			            \[
+				            \text{(A, Two-box)} = (4, 10^6 + 10^3) \quad \text{and} \quad \text{(B, Two-box)} = (1, 10^3).
+			            \]
+			      \item Here, for C, "One-box" yields 4, and "Two-box" yields 1. Thus, "One-box" still dominates "Two-box" from C's perspective.
+
+			      \item Therefore, the strategy "Two-box" (B) is strictly dominated for C, and can be eliminated. Hence, the surviving strategy for C is "One-box" (A).
+
+			      \item For P, the strategy "A" (predicting C plays "One-box") guarantees a payoff of 10, while "B" (predicting C plays "Two-box") results in a payoff of 0. Therefore, P will always choose to predict "One-box" (A).
+
+			      \item The unique surviving set of strategies is:
+			            \begin{enumerate}
+				            \item C: "One-box" (A)
+				            \item P: "A" (predicting "One-box")
+			            \end{enumerate}
+		      \end{itemize}
+
+
+
 		\item Now suppose P (somehow) observe what C will do before C even acts, and this ability
 		      is common knowledge. Explain why this not a static game. Who effectively moves first as
 		      far as the game is concerned, and who then observes that first move?
+
+		      This is no longer a static game because the decision-making process has changed. In a static game, both players make their decisions simultaneously, without knowledge of the other player's choice. However, if P observes C’s decision before C acts, this introduces sequentiality into the game. In this case, Player P effectively moves first as far as the game is concerned, since P can choose the amount of money to put in the opaque box based on knowing what C will choose. C then observes P’s choice and makes their decision, knowing the contents of both boxes.
+
+		      Since this is a sequential game, it is no longer a static game of complete information. This dynamic aspect shifts the nature of the strategic interaction.
+
+
 		\item If you read ahead to chapter 7 and 8, we will discuss dynamic games of complete information.
 		      Solve the dynamic games you described in part (c) using Sub game Perfect Nash Equilibrium.
+
+		      In this scenario, the game is now dynamic, with two stages:
+		      \begin{enumerate}
+			      \item Player P moves first by choosing the amount to put in the opaque box.
+			      \item Player C moves second by choosing either "One-box" or "Two-box."
+		      \end{enumerate}
+
+		      To solve this using Subgame Perfect Nash Equilibrium (SPNE), we use backward induction:
+		      \begin{enumerate}
+			      \item First, consider C’s decision given P’s choice. If P chooses to put \$0 in the opaque box, C’s payoff for choosing "One-box" is \$1000, and for choosing "Two-box" is \$1000 (since the transparent box always has \$1000 in it). Thus, C is indifferent and can choose either.
+			      \item  If P chooses to put \$1,000,000 in the opaque box, C’s payoff for choosing "One-box" is \$1,000,000, and for choosing "Two-box" is \$1,001,000. In this case, C will prefer to choose "Two-box" because it gives a higher payoff.
+
+			      \item  Now, we move to P’s decision. P will anticipate that C will choose "One-box" if \$0 is placed in the opaque box (because C is indifferent), and "Two-box" if \$1,000,000 is placed in the opaque box. P’s payoff is based on whether their prediction is correct:
+			      \item  If P predicts "One-box" and chooses \$0, the prediction is correct, so P gets a payoff of 10.
+			      \item  If P predicts "Two-box" and chooses \$1,000,000, the prediction is correct, so P gets a payoff of 10.
+			      \item  P chooses \$1,000,000 in the opaque box (predicting "Two-box").
+			      \item  C chooses "Two-box."
+		      \end{enumerate}
 	\end{enumerate}
 \end{homeworkProblem}
 
