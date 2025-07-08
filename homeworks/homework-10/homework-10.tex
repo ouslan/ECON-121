@@ -8,7 +8,7 @@
 \usepackage{tikz}
 \usepackage[plain]{algorithm}
 \usepackage{algpseudocode}
-
+\usepackage[inline,shortlabels]{enumitem}
 \usetikzlibrary{automata,positioning}
 
 %
@@ -141,5 +141,41 @@
 \pagebreak
 
 \begin{homeworkProblem}
+	Chicken is a classic game regarding brinksmanship; one version is portrayed in the
+	movie Rebel Without a Cause, where two teenagers drive directly at one another in
+	metal cars, waiting for the other to chicken out and swerve. Consider a game where
+	two young rebels/world leaders are hurtling towards each other. The two can be
+	Chicken (C) or Macho (M). If both are chicken, we reach the status quo. If one is
+	Macho and the other is Chicken, the Macho one “wins” and the Chicken “loses.” If
+	both go Macho, a catastrophe occurs. The game can be described in matrix form as
+	follows:
+
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{c|c c}
+			$I P_1/P_2$ & d       & d                   \\
+			\hline
+			Chicken     & (0, 0)  & (-1, 1)             \\
+			Macho       & (1, -1) & (-100000, -1000000) \\
+		\end{tabular}
+	\end{table}
+
+	\begin{enumerate}
+		\item Are there any dominated stategies? If so, which ones?
+		\item Find any pure stategy NE.
+		\item Find the MSNE. What is the expected payoff for Player 1?
+	\end{enumerate}
 \end{homeworkProblem}
+
+\begin{homeworkProblem}
+	Consider the Cournot Fuopoly we studied in Chapter 4, but firm 2 has a marginal cost of
+	10 while firm 1 has a marginal cost of 0. As a reminder, demand is $p(q)= 100 - 1$; $q = q_1 + q_2$
+	\begin{enumerate}[(a)]
+		\item Generte the best response function of firms 1 and 2.
+		\item Roughly graph the best responcse correspondence.
+		\item Explain the first iteration you would take if you were using IESDS. (just provide one correct answer.)
+		\item Find the Nash Equilibrium.
+	\end{enumerate}
+\end{homeworkProblem}
+
 \end{document}
