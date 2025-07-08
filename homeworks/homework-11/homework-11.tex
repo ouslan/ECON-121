@@ -6,7 +6,9 @@
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{tikz}
+\usepackage{istgame}
 \usepackage[plain]{algorithm}
+\usepackage[inline,shortlabels]{enumitem}
 \usepackage{algpseudocode}
 
 \usetikzlibrary{automata,positioning}
@@ -140,7 +142,144 @@
 
 \pagebreak
 
+% 7.4
+\begin{homeworkProblem}
+	Centipedes: Imagine a two player game that proceeds as follows. A pot of
+	money is created with \$6 in it initially. Player 1 moves first, then player 2,
+	then player 1 again and finally player 2 again. At each player’s turn to move,
+	he has two possible actions: grab (G) or share (S). If he grabs, he gets 23 of
+	the current pot of money, the other player gets 1/3 of the pot and the game
+	ends. If he shares then the size of the current pot is multiplied by 3/2 and the
+	next player gets to move. At the last stage in which player 2 moves, if he
+	chooses share then the pot is still multiplied by 3/2 , player 2 gets 1/3 of the pot
+	and player 1 gets 2/3 of the pot.
+
+	\begin{enumerate}[(a)]
+		\item Model this as an extensive form game tree. Is it a game of perfext
+		      or imperfect information?
+		\item How many terminal nodes does the game have? How many information sets?
+		\item How many pure stategies does each player have?
+		\item Find the Nash equilibria of this game. How many outcomes can be
+		      supported in equilibrium?
+		\item Now imagin that at the last stage in which player 2 move, if he chooses
+		      to share then the pot is qually split among the players.
+		      Does your answer to part (d) above change?
+	\end{enumerate}
+
+\end{homeworkProblem}
+
+% 8.6
 \begin{homeworkProblem}
 \end{homeworkProblem}
+
+% 8.16
+\begin{homeworkProblem}
+\end{homeworkProblem}
+
+% application 1
+\begin{homeworkProblem}
+	Someone stole from a bloodthirsty crime boss. The boss is questioning one of his workers,
+	seeking a confession. He says to the worker, “If you do not confess your crime, I will kill
+	you.” The worker agrees that the boss is going to kill him, but he notes that the boss’ threat
+	is not credible. Why is the worker correct? (Hint: What happens if the worker confesses?)
+\end{homeworkProblem}
+
+% application 2
+\begin{homeworkProblem}
+	\begin{center}
+		\begin{istgame}
+			\xtdistance{15mm}{30mm}
+			\istroot(0){1}
+			\istb{A}[above left]{(1,0)}
+			\istb{B}[above right]
+			\endist
+			\istroot(1)(0-2)<30>{2}
+			\istb{C}[al]{(0,2)}
+			\istb{D}[ar]
+			\endist
+			\istroot(2)(1-2)<30>{1}
+			\istb{E}[al]{(3,0)}
+			\istb{F}[ar]
+			\endist
+			\istroot(3)(2-2)<30>{2}
+			\istb{G}[al]{(0,4)}
+			\istb{H}[ar]{(0,5)}
+			\endist
+		\end{istgame}
+	\end{center}
+
+	\begin{center}
+
+		\begin{istgame}
+			% Increase horizontal spacing
+			\xtdistance{15mm}{60mm}
+
+			% Root node
+			\istroot(0){1}
+			\istb{A}[al]
+			\istb{B}[ar]
+			\endist
+			\xtdistance{10mm}{30mm}
+
+			% Subtree after A (shifted slightly to the left for clarity)
+			\istroot(4)(0-1)<above left>{2}
+			\istb{C}[al]
+			\istb{D}[ar]
+			\endist
+
+			% Subtree after D (shifted to the right using extra horizontal distance)
+			\istroot(1)(0-2)<above right>{2}
+			\istb{E}[al]
+			\istb{F}[ar]
+			\endist
+
+			\xtdistance{20mm}{20mm}
+
+			\istroot(5)(4-1)<above left>
+			\istb{G}[al]{(1,2)}
+			\istb{H}[ar]{(7,8)}
+			\endist
+			\istroot(6)(4-2)<above right>
+			\istb{G}[al]{(8,7)}
+			\istb{H}[ar]{(2,1)}
+			\endist
+
+			\istroot(2)(1-1)<above left>
+			\istb{I}[al]{(3,4)}
+			\istb{J}[ar]{(5,6)}
+			\endist
+			\istroot(3)(1-2)<above right>
+			\istb{I}[al]{(6,5)}
+			\istb{J}[ar]{(4,3)}
+			\endist
+
+
+			\xtInfoset(6)(5){1}
+			\xtInfoset(2)(3){1}
+
+		\end{istgame}
+	\end{center}
+\end{homeworkProblem}
+
+% application 3
+\begin{homeworkProblem}
+	Consider a simplified version of the Centipedes game. There is a stack of N dollar bills.
+	Player 1 can take \$2 and end the game, or she can take one dollar and allow Player 2 to act.
+	Then, if there are at least \$2 left, Player 2 can either take \$2 and end the game or take \$1
+	and allow Player 1 to act, and so on. If there is only \$1 left, the acting player takes the
+	dollar.
+
+	\begin{enumerate}[(a)]
+		\item What is the SPINE for $N=2$? $N=3$?
+		\item is the outcoe of the SPINE for $N=10000000$
+		\item A complete strategy is "always take \$1 no matter what." What is the best response
+		      to that strategy, for some $N$?
+		\item With words, while two chess grandmasters will always end up taking \$2 immediately.
+	\end{enumerate}
+
+\end{homeworkProblem}
+
+
+
 \end{document}
 
