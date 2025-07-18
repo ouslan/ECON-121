@@ -1,0 +1,322 @@
+
+
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage[inline,shortlabels]{enumitem}
+\usetikzlibrary{automata,positioning}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{extramarks}
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Final}
+\newcommand{\hmwkDueDate}{Jun 16, 2025}
+\newcommand{\hmwkClass}{ECON 121}
+\newcommand{\hmwkClassInstructor}{Dr. Jasmine N Fuller}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Problem 1 
+\begin{homeworkProblem}
+	What is a mechanism? Who is the mechanism designer?
+\end{homeworkProblem}
+
+% Problem 2 
+\begin{homeworkProblem}
+	Describe the concept of rationalizability.
+\end{homeworkProblem}
+
+% Problem 3 
+\begin{homeworkProblem}
+	What is a dominant strategy?
+\end{homeworkProblem}
+
+% Problem 4 
+\begin{homeworkProblem}
+	Solve the following game for its Nash Equilibrium/Equilibria.
+
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{l|*{5}{>{\centering\arraybackslash}m{2.5cm}}}
+			\toprule
+			                  & \textbf{Crime} & \textbf{Action} & \textbf{Thriller} & \textbf{Comedy} & \textbf{Doc.} \\
+			\midrule
+			\textbf{Crime}    & (10, 10)       & (4, 3)          & (4, 2)            & (4, 1)          & (4, -10)      \\
+			\textbf{Action}   & (3, 4)         & (9, 9)          & (3, 2)            & (3, 1)          & (3, -10)      \\
+			\textbf{Thriller} & (2, 4)         & (2, 3)          & (8, 8)            & (2, 1)          & (2, -10)      \\
+			\textbf{Comedy}   & (1, 4)         & (1, 3)          & (1, 2)            & (5, 5)          & (1, -10)      \\
+			\textbf{Doc.}     & (-10, 4)       & (-10, 3)        & (-10, 2)          & (-10, 1)        & (-10, 10)     \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+\end{homeworkProblem}
+
+% Problem 5 
+\begin{homeworkProblem}
+	You are in charge of regulating a local utility that runs effectively as a monopoly. The
+	utility just recently had a potential entrant, and in response it lowered its prices
+	substantially (and temporarily). The potential entrant was scared away before entering at
+	all. If, when you ask the utility to lower its prices, it complains its costs are high, why are
+	you not convinced?
+\end{homeworkProblem}
+
+% Problem 6 
+\begin{homeworkProblem}
+	Two firms (1 and 2) compete on price with product differentiation such that demand for
+	firm $i$ is $q_i =10 - p_i + p_j$. They incur costs $c_iq_i$, where $c_i$ is “low enough” to encourage
+	market participation. All parameters are positive, and costs ($c_1 \and c_2$) are firm dependent.
+
+	\begin{enumerate}[(a)]
+		\item Find the prices $p_1 \and p_2$ that occur in equilibrium in the static game.
+		\item For part (b), assume $c_2=30$. Suppose firm 1 invests in a technology that
+		      determines $c_1$ paying an investment cost equal to $K-20 c_1$, where K is some
+		      constant, and then the firms simultaneously compete on price. Firm 1’s
+		      technology investment occurs first, viewed by both firms. What “taxonomy”
+		      strategy will firm 1 employ? Why? Hint: What does lowering $c_1$ do to the
+		      behavior of firm 2? Find the unique SPNE prices and $c_1$.
+		\item
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 7 
+\begin{homeworkProblem}
+	Consider the following two stage games, the Prisoner’s Dilemma (PD, left) and the
+	Revenge game (R, right). When relevant, the discount factor is $\delta , 0<\delta<1$.
+
+	\begin{multicols}{2}
+
+		% First game matrix
+		\[
+			\begin{array}{c|c|c}
+				  & m      & f      \\
+				\hline
+				M & (4,4)  & (-1,5) \\
+				\hline
+				F & (5,-1) & (1,1)  \\
+			\end{array}
+		\]
+
+		% Second game matrix
+		\[
+			\begin{array}{c|c|c}
+				  & l       & g       \\
+				\hline
+				L & (0,0)   & (-4,-1) \\
+				\hline
+				G & (-1,-4) & (-3,-3) \\
+			\end{array}
+		\]
+
+	\end{multicols}
+
+	\begin{enumerate}[(a)]
+		\item Take both games separately as static games. Solve for all pure strategy Nash
+		      equilibria (NE) for PD, and then do the same for R.
+		\item Suppose the players play a three-stage game in the following order: R, PD, PD. Find
+		      the two pure strategy subgame perfect Nash equilibria (SPNE).
+		\item Suppose the players play a two-stage game in the following order: PD, R. Find a pure
+		      strategy SPNE that supports the play of (M,m) in the first round for high enough $\delta$
+		      .Find the lowest $\delta$ that supports the SPNE you found in part (c).
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 8 
+\begin{homeworkProblem}
+	Consider a symmetric independent private values setting with two
+	buyers. The seller owns an indivisible object which she is commonly
+	known to value at zero. Suppose that $v_i \in \{1,2,3\}$ for i = 1,2, and that
+	each realization is equally likely (i.e., occurs with the probability 1/3).
+	Suppose also that $S_i = {NO, 1, 2, 3}$ for for i = 1,2. That is a bidder
+	may choose not to participate or he may bid one of his three possible
+	valuations. Finally, suppose that ties in bidding are broken randomly
+	without bias.
+	\begin{itemize}[(a)]
+		\item Suppose the seller announces a second-price sealed bid auction
+		      with reserve price of 1. Find a symmetric Bayesian Nash
+		      Equilibrium (BNE), $b^\star(v)$, in which the bidders play weakly
+		      dominant strategies. How much expected revenue is generated
+		      in this BNE?
+		\item Suppose the seller announces a second-price sealed bid auction
+		      with reserve price of 1. Find an asymmetric BNE, $(b_1(v_1), b_2(v_2))$.
+		\item Suppose the seller announces a first-price sealed-bid auction
+		      with reserve price of 1. Find the symmetric BNE, $b^{\star \star}(v)$ which
+		      generates the highest expected revenue. How much revenue is
+		      generated in the BNE?
+		\item Suppose the seller announces an all-pay auction with a reserve
+		      price of 1. Find a symmetric BNE, $b^{\star \star \star}(v)$. How much expected
+		      revenue is generated in this BNE?
+	\end{itemize}
+\end{homeworkProblem}
+
+% Problem 9 
+\begin{homeworkProblem}
+	Let $U(x,y) = \sqrt{x} + \sqrt{y}$
+	\begin{enumerate}
+		\item Marshallian demand functions for x and y.
+		\item Indirect utility function.
+		\item Compensated (Hicksian) demand functions for x and y.
+		\item Expenditure function.
+		\item Write the Slutsky equation for good x.
+		\item Explain, in words, how you could have derived Marshallian demand in a different
+		      way.
+		\item Explain, in words, how you could have derived Hicksian demand in a different
+		      way.
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Problem 10
+\begin{homeworkProblem}
+	A seller sells a good to a prospective buyers. The buyer values the good at $\theta q$, Where $\theta$ is
+	his (privately known) marginal utility of quality and $q$ is the good's quality. It is common
+	knowledge that $\theta$ is high ($\theta = 2$) with a probability of $\frac{1}{4}$ and $\theta$ is low $(\theta = 1)$ with
+	probability of $\frac{3}{4}$. The monopolist incurres a cost based on quality $c(q) = \frac{q}{2}$ so that his
+	profits is $q - \frac{q^2}{2}$. The buyer can reject an offer (not buy anything) and get a payoff of 0, or
+	he can buy a good and get a payoff of $\theta q - p$. The seller offer a menu consisting of
+	$\{p_1, q_1, p_2, q_2 \}$, where the subscript means the price and quality is meant for the seller of
+	that type ($\theta$), and the buyer picks which good she wants.
+
+
+	\begin{enumerate}[(a)]
+		\item Suppose, for part (a) only, the seller observe $\theta$ directly and can offer a single type
+		      of good based on the buyer's type $\{p_i, q_i \}$, $i\in [1,2]$. Construct the optimal
+		      price/quality combination when $\theta=1$ and when $\theta=2$.
+		\item Suppose the seller ask the buyer what hist type is, assume he answers honestly, and offer
+		      and contract like in part (a). Who will lie, and why?
+		\item Construct the optimal contract where everyone buys their appropriate good.
+		\item Whose good has an inefficient level of quality? Is it too high or low? Why does
+		      the seller do this?
+	\end{enumerate}
+\end{homeworkProblem}
+\end{document}
